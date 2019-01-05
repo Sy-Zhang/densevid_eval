@@ -11,6 +11,6 @@ if __name__ == '__main__':
         for vid, info in anno_list.items():
             for (start, end), sentence in zip(info['timestamps'],info['sentences']):
                 row = {'video':vid, 'description': sentence, 'times':[[float(start), float(end)]], 'duration':info['duration']}
-            data.append(row)
+                data.append(row)
         with open(json_path, 'w') as json_file:
             json.dump(data, json_file)
